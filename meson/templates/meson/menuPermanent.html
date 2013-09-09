@@ -1,0 +1,19 @@
+{% extends "meson/menu.html" %}
+{% load i18n %}
+
+{% block menuContent %}
+<script type="text/javascript">$("#menuPermanentTab").addClass("active");</script>
+
+	<div id="permanentMenuContent">
+		<p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:30px; text-align:left">Menu del Meson Don Ramon</p>
+
+		<ul>
+		{% for dish in permanent_menu.dish_set.all %}
+			<li>{{ dish.name }}</li>
+		{% endfor %}
+		</ul>
+	</div>
+
+</div>
+
+{% endblock %}

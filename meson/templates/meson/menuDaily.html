@@ -1,0 +1,33 @@
+{% extends "meson/menu.html" %}
+{% load i18n %}
+
+{% block menuContent %}
+<script type="text/javascript">$("#menuDailyTab").addClass("active");</script>
+
+	<div id="dailyMenuContent">
+		<p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:30px; text-align:left">Menu del {{ today }}</p>
+
+		{% if today_menu|length > 1 %}
+			{% for menu in today_menu %}
+				<p>{{ menu.name }}</p>
+				<ul>
+				{% for dish in menu.dish_set.all %}
+					<li>{{ dish.name }}</li>
+				{% endfor %}
+				</ul>
+			{% endfor %}
+		{% else %}{% if today_menu|length = 1 %}
+				<ul>
+				{% for dish in today_menu.0.dish_set.all %}
+					<li>{{ dish.name }}</li>
+				{% endfor %}
+				</ul>
+		{% else %}
+			<p>There's no particular daily menu today</p>
+		{% endif %}
+		{% endif %}
+	</div>
+
+</div>
+
+{% endblock %}

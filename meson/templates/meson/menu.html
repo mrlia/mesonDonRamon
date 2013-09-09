@@ -1,0 +1,25 @@
+{% extends "meson/base_meson.html" %}
+{% load i18n %}
+
+{% block content %}
+<script type="text/javascript">$("#menuTab").addClass("active");</script>
+
+
+<div class="col-md-2" id="menuSidebar" role="navigation">
+	<div class="well sidebar-nav">
+		<ul class="nav">
+			<li>Menus</li>
+			<li id="menuPermanentTab"><a href="/meson/menuPermanent">Variety</a></li>
+			<li id="menuDailyTab"><a href="/meson/menuDaily">Daily Menu</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="col-md-10">
+	{% block menuContent %}
+		</br>
+		<p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:18px; text-align:left">Marvelous dishes in Meson Don Ramon. See the photos</p>
+	{% endblock %}
+</div>
+
+{% endblock %}
