@@ -2,3 +2,19 @@
 	background-color:#dcb;
 	border-radius: 4px;
 }
+.googleMaps {
+	border:thin black solid;
+}
+.infoHeader {
+	font-family:Comic Sans MS, cursive, sans-serif;
+	font-size:30px;
+	text-align:left	
+}
+.infoText {
+	font-family:Comic Sans MS, cursive, sans-serif;
+	font-size:18px;
+	text-align:left	
+}
+.infoContainer {
+	margin: 10px 10px 10px 20px;
+}
