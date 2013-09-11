@@ -1,9 +1,8 @@
-{% extends "meson/base_meson.html" %}
+{% extends "meson/content_page.html" %}
 {% load i18n %}
 
-{% block content %}
-<script type="text/javascript">$("#eventsTab").addClass("active");</script>
-<div id="content-main">
-  <p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:30px; text-align:left">Events del Meson Don Ramon</p>
-</div>
+{% block script_block %}<script type="text/javascript">$("#eventsTab").addClass("active");</script>{% endblock %}
+
+{% block main_text_content %}
+  <p class="infoHeader">Events of Meson Don Ramon</p>
 {% endblock %}
