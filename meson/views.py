@@ -14,20 +14,22 @@ def about(request):
 	return render(request, 'meson/about.html')
 
 def menu(request):
-    permanent_menu = DailyMenu.objects.get(name="Permanent")
-    today = datetime.date.today()
-    today_menu = DailyMenu.objects.filter(menu_date__year=today.year, menu_date__month=today.month, menu_date__day=today.day)
-    context = {'permanent_menu': permanent_menu, 'today_menu': today_menu, 'today': today.isoformat()}
-    return render(request, 'meson/menu.html', context)
+    return render(request, 'meson/menu.html')
 
 def menuPermanent(request):
-    permanent_menu = DailyMenu.objects.get(name="Permanent")
+    try:
+        permanent_menu = DailyMenu.objects.get(name="Permanent")
+    except DailyMenu.DoesNotExist:
+        permanent_menu = None
     context = {'permanent_menu': permanent_menu}
     return render(request, 'meson/menuPermanent.html', context)
 
 def menuDaily(request):
     today = datetime.date.today()
-    today_menu = DailyMenu.objects.filter(menu_date__year=today.year, menu_date__month=today.month, menu_date__day=today.day)
+    try:
+        today_menu = DailyMenu.objects.filter(menu_date__year=today.year, menu_date__month=today.month, menu_date__day=today.day)
+    except DailyMenu.DoesNotExist:
+        today_menu = None
     context = {'today_menu': today_menu, 'today': today.isoformat()}
     return render(request, 'meson/menuDaily.html', context)
 
