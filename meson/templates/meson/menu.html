@@ -2,8 +2,16 @@
 {% load i18n %}
 
 {% block content %}
-<script type="text/javascript">$("#menuTab").addClass("active");</script>
+<div class="col-md-10">
+	{% block menuContent %}
+		</br>
+		<p class="infoText">Marvelous dishes in Meson Don Ramon. See the photos</p>
+	{% endblock %}
+</div>
+{% endblock %}
 
+{% block sidebar %}
+<script type="text/javascript">$("#menuTab").addClass("active");</script>
 
 <div class="col-md-2" id="menuSidebar" role="navigation">
 	<div class="well sidebar-nav">
@@ -14,12 +22,4 @@
 		</ul>
 	</div>
 </div>
-
-<div class="col-md-10">
-	{% block menuContent %}
-		</br>
-		<p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:18px; text-align:left">Marvelous dishes in Meson Don Ramon. See the photos</p>
-	{% endblock %}
-</div>
-
 {% endblock %}
