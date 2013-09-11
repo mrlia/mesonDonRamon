@@ -22,17 +22,15 @@
             <img class="img-circle" src="{% static 'meson/images/meson_icon2.jpg' %}" alt="Meson Don Ramon" style="width: 140px; height: 140px;">
           </div>
           <div class="col-md-6">
-            <p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:30px; text-align:left">Meson</p>
-            <p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:30px; text-align:center">Don</p>
-            <p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:30px; text-align:right">Ramon</p>
+            <p class="infoHeader">Meson Don Ramon</p>
           </div>
           <div class="col-md-4">
             <address class="text-right">
               <small>
-                Virgen de la Soledad<br>
+                Virgen de la Soledad, 16<br>
                 19003 Guadalajara<br>
                 (Spain)<br>
-                <abbr title="Phone">P:</abbr> (+34)949123456
+                <abbr title="Phone">P:</abbr> (+34)949100994
               </small>
             </address>
           </div>
@@ -74,11 +72,8 @@
           <div class="coloredContainer container" id="content">
               {% block pretitle %}{% endblock %}
               {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
-              {% block content %}
-              {% block object-tools %}{% endblock %}
-              {{ content }}
-              {% endblock %}
               {% block sidebar %}{% endblock %}
+              {% block content %}{% endblock %}
               <br class="clear" />
           </div>
           <!-- END Content -->
