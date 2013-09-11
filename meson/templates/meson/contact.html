@@ -1,9 +1,19 @@
-{% extends "meson/base_meson.html" %}
+{% extends "meson/content_page.html" %}
 {% load i18n %}
 
-{% block content %}
-<script type="text/javascript">$("#contactTab").addClass("active");</script>
-<div id="content-main">
-  <p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:30px; text-align:left">Contact del Meson Don Ramon</p>
-</div>
+{% block script_block %}<script type="text/javascript">$("#contactTab").addClass("active");</script>{% endblock %}
+
+{% block main_text_content %}
+	<p class="infoHeader">Where are we?</p>
+	<p class="infoText">
+        Virgen de la Soledad, 16<br>
+        19003 Guadalajara<br>
+        (Spain)<br>
+        Phone: (+34)949100994
+	</p>
+	<a href="https://www.google.es/maps/preview#!q=Calle+de+la+Virgen+de+la+Soledad%2C+16%2C+Guadalajara%2C+Spain" target="_blank">
+		<center>
+			<img class="googleMaps" src="http://maps.googleapis.com/maps/api/staticmap?center=Calle+de+la+Virgen+de+la+Soledad%2C+16%2C+Guadalajara%2C+Spain&amp;zoom=16&amp;size=640x400&amp;maptype=roadmap&amp;markers=color:red%7Ccolor:red%7Clabel:A%7C40.6281572,-3.1659409&amp;sensor=false" alt="Your map"/>
+		</center>
+	</a>
 {% endblock %}
