@@ -21,7 +21,13 @@ def menuPermanent(request):
         permanent_menu = DailyMenu.objects.get(name="Permanent")
     except DailyMenu.DoesNotExist:
         permanent_menu = None
-    context = {'permanent_menu': permanent_menu}
+    if permanent_menu != None:
+        permanent_menu_drinks = permanent_menu.dish_set.filter(dish_type="Dr")
+        permanent_menu_bocatines = permanent_menu.dish_set.filter(dish_type="B")
+        permanent_menu_tapas = permanent_menu.dish_set.filter(dish_type="Ta")
+        permanent_menu_tostas = permanent_menu.dish_set.filter(dish_type="To")
+        permanent_menu_raciones = permanent_menu.dish_set.filter(dish_type="R")
+    context = {'permanent_menu': permanent_menu, 'permanent_menu_drinks': permanent_menu_drinks, 'permanent_menu_bocatines': permanent_menu_bocatines, 'permanent_menu_tapas': permanent_menu_tapas, 'permanent_menu_tostas': permanent_menu_tostas, 'permanent_menu_raciones': permanent_menu_raciones}
     return render(request, 'meson/menuPermanent.html', context)
 
 def menuDaily(request):
