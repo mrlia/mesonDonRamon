@@ -1,25 +1,13 @@
 {% extends "meson/base_meson.html" %}
 {% load i18n %}
 
+
 {% block content %}
-<div class="col-md-10">
+<div class="col-md-12">
 	{% block menuContent %}
 		</br>
-		<p class="infoText">Marvelous dishes in Meson Don Ramon. See the photos</p>
+		<p class="infoText">Come and enjoy the variety of drinks, tapas, raciones and much more. With a drink you get a free tapa!<br/>		
+		</p>
 	{% endblock %}
-</div>
-{% endblock %}
-
-{% block sidebar %}
-<script type="text/javascript">$("#menuTab").addClass("active");</script>
-
-<div class="col-md-2" id="menuSidebar" role="navigation">
-	<div class="well sidebar-nav">
-		<ul class="nav">
-			<li>Menus</li>
-			<li id="menuPermanentTab"><a href="/meson/menuPermanent">Variety</a></li>
-			<li id="menuDailyTab"><a href="/meson/menuDaily">Daily Menu</a></li>
-		</ul>
-	</div>
 </div>
 {% endblock %}

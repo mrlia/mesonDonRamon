@@ -1,31 +1,97 @@
-{% extends "meson/menu.html" %}
+{% extends "meson/content_page.html" %}
 {% load i18n %}
 
-{% block menuContent %}
-<script type="text/javascript">$("#menuDailyTab").addClass("active");</script>
+{% block script_block %}<script type="text/javascript">$("#menuDailyTab").addClass("active");</script>{% endblock %}
 
+{% block main_text_content %}
 	<div id="dailyMenuContent">
-		<p class="infoHeader">Menu del {{ today }}</p>
+		<div class="headerTextContainer">
+			<p class="infoTextFont">Get a daily menu for just 10€. Choose one first, one second and dessert. <br/>
+				Wine, bread and coffee included.
+			</p>
+		</div>
 
-		{% if today_menu|length > 1 %}
-			{% for menu in today_menu %}
-				<p>{{ menu.name }}</p>
-				<ul>
-				{% for dish in menu.dish_set.all %}
-					<li>{{ dish.name }}</li>
+		<div class="menu" id="dailyMenu">
+			{% if today_menu|length > 1 %}
+				{% for menu in today_menu %}
+					<p>{{ menu.name }}</p>
+					<dl>
+						<dt>First</dt>
+						{% for dish in menu.dish_set.all %}
+							{% if dish.dish_type = 'First' %}
+							<dd>
+									<ul>
+										<li>{{ dish.name }}</li>
+									</ul>
+							</dd>
+							{% endif %}
+						{% endfor %}
+					</dl>
+					<dl>
+						<dt>Second</dt>
+						{% for dish in menu.dish_set.all %}
+							{% if dish.dish_type = 'Second' %}
+							<dd>
+									<ul>
+										<li>{{ dish.name }}</li>
+									</ul>
+							</dd>
+							{% endif %}
+						{% endfor %}
+					</dl>
+					<dl>
+						<dt>Dessert</dt>
+						{% for dish in menu.dish_set.all %}
+							{% if dish.dish_type = 'Dessert' %}
+							<dd>
+									<ul>
+										<li>{{ dish.name }}</li>
+									</ul>
+							</dd>
+							{% endif %}
+						{% endfor %}
+					</dl>
 				{% endfor %}
-				</ul>
-			{% endfor %}
-		{% else %}{% if today_menu|length = 1 %}
-				<ul>
+			{% elif today_menu|length = 1 %}
+				<p>{{ dish.name }}</p>
+				<dt>First</dt>
 				{% for dish in today_menu.0.dish_set.all %}
-					<li>{{ dish.name }}</li>
+					{% if dish.dish_type = '1' %}
+					<dd>
+							<ul>
+								<li>{{ dish.name }}</li>
+							</ul>
+					</dd>
+					{% endif %}
 				{% endfor %}
-				</ul>
-		{% else %}
-			<p>There's no particular daily menu today</p>
-		{% endif %}
-		{% endif %}
+				<dt>Second</dt>
+				{% for dish in today_menu.0.dish_set.all %}
+					{% if dish.dish_type = '2' %}
+					<dd>
+							<ul>
+								<li>{{ dish.name }}</li>
+							</ul>
+					</dd>
+					{% endif %}
+				{% endfor %}
+				<dt>Dessert</dt>
+				{% for dish in today_menu.0.dish_set.all %}
+					{% if dish.dish_type = 'De' %}
+					<dd>
+							<ul>
+								<li>{{ dish.name }}</li>
+							</ul>
+					</dd>
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				<div class="row">
+					<div class="col-md-12">
+							<p class="infoTextContainer infoTextFont"><a href="/meson/contact">Get in touch</a> with us about our today's daily menu.</p>
+					</div>
+				</div>
+			{% endif %}
+		</div>
 	</div>
 
 </div>

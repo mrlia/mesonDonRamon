@@ -1,26 +1,82 @@
-{% extends "meson/menu.html" %}
+{% extends "meson/content_page.html" %}
 {% load i18n %}
 
-{% block menuContent %}
-<script type="text/javascript">$("#menuPermanentTab").addClass("active");</script>
+{% block script_block %}<script type="text/javascript">$("#menuPermanentTab").addClass("active");</script>{% endblock %}
 
+{% block main_text_content %}
 	<div id="permanentMenuContent">
-		<p class="infoHeader">Menu del Meson Don Ramon</p>
+		<div class="headerTextContainer">
+			<p class="infoTextFont">Come and enjoy the variety of drinks, tapas, raciones and much more. With each drink you get a free tapa! <br/>
+				(Some choices may not be available depending of the daily products)
+			</p>
+		</div>
 
-		<ul>
-		{% if permanent_menu|length > 0 %}
-				<ul>
-				{% for dish in permanent_menu.dish_set.all %}
-					<li>{{ dish.name }}</li>
-				{% endfor %}
-				</ul>
-		{% else %}
-			<p>There is no particular menu</p>
-		{% endif %}
-
-		</ul>
+		<div class="menu" id="permanentMenu">
+			{% if permanent_menu|length > 0 %}
+				<div class="row">
+					<div class="col-md-6">
+						<dl>
+							<dt>Drinks</dt>
+							<dd>
+							{% for dish in permanent_menu_drinks.all %}
+									<ul>
+										<li>{{ dish.name }}</li>
+									</ul>
+							{% endfor %}
+							</dd>
+						</dl>
+					</div>
+					<div class="col-md-6">
+						<dl>
+							<dt>Bocatines</dt>
+							<dd>
+							{% for dish in permanent_menu_bocatines.all %}
+									<ul>
+										<li>{{ dish.name }}</li>
+									</ul>
+							{% endfor %}
+							</dd>
+							<dt>Tapas</dt>
+							<dd>
+							{% for dish in permanent_menu_tapas.all %}
+									<ul>
+										<li>{{ dish.name }}</li>
+									</ul>
+							{% endfor %}
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<dl>
+							<dt>Tostas</dt>
+							<dd>
+							{% for dish in permanent_menu_tostas.all %}
+									<ul>
+										<li>{{ dish.name }}</li>
+									</ul>
+							{% endfor %}
+							</dd>
+						</dl>
+					</div>
+					<div class="col-md-6">
+						<dl>
+							<dt>Raciones</dt>
+							<dd>
+							{% for dish in permanent_menu_raciones.all %}
+									<ul>
+										<li>{{ dish.name }}</li>
+									</ul>
+							{% endfor %}
+							</dd>
+						</dl>
+					</div>
+				</div>
+			{% else %}
+				<p>There is no particular menu</p>
+			{% endif %}
+		</div>
 	</div>
-
-</div>
 
 {% endblock %}
