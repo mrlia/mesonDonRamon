@@ -1,20 +1,67 @@
 .coloredContainer {
-	background-color:#dcb;
+	margin: 0px 100px;
+	background-color:#DECCB8;
 	border-radius: 4px;
 }
 .googleMaps {
 	border:thin black solid;
 }
 .infoHeader {
-	font-family:Comic Sans MS, cursive, sans-serif;
-	font-size:30px;
-	text-align:left	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:35px;
+	text-align:left;
+	border-radius: 4px;
+	background-color: #FCE5CB;
+	margin: 10px;
+	padding: 0px 10px;
 }
-.infoText {
-	font-family:Comic Sans MS, cursive, sans-serif;
-	font-size:18px;
-	text-align:left	
+.infoTextContainer {
+	margin-bottom: 30px;
 }
-.infoContainer {
-	margin: 10px 10px 10px 20px;
+.infoTextFont {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	text-align:left;
+	padding: 0px 30px;
+}
+.mainContainer {
+	margin: 20px;
+}
+.mesonTitle {
+	background-color: #96766B;
+	color: #DCAD77;
+	font-family:Monotype Corsiva;
+}
+.mesonTitle p {
+line-height: 1.8;
+}
+.mesonTitleText {
+	font-family:Monotype Corsiva;
+	font-size:70px;
+	text-align:center
+}
+.bodyMeson {
+	background-color:#222;
+}
+.navMeson {
+	font-family:Monotype Corsiva;
+	font-size: 25px;
+	border-color:#222;
+}
+.menu {
+	padding: 0px 100px;
+}
+.menu dd {
+	font-family: Monotype Corsiva;
+	font-size: 18px;
+}
+.menu dt {
+	font-family: Monotype Corsiva;
+	font-size: 22px;
+}
+.headerTextContainer {
+	margin: 30px 10px;
+	border-radius: 4px;
+	background-color: #FCE5CB;
+	padding: 15px;
 }
