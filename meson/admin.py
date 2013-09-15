@@ -4,7 +4,7 @@ from meson.models import Dish
 
 class DishInline(admin.TabularInline):
 	model = Dish
-	extra = 3
+	extra = 6
 
 class DailyMenuAdmin(admin.ModelAdmin):
 	fieldsets = [
