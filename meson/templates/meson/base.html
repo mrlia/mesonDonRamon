@@ -19,7 +19,7 @@
       <div class="mesonTitle jumbotron">
         <div class="row">
           <div class="col-md-2">
-            <a href="{% block urlHome %}/meson{% endblock %}">
+            <a href="{% block urlHome %}/{% endblock %}">
             <img class="img-circle" src="{% static 'meson/images/meson_icon2.jpg' %}" alt="Meson Don Ramon" style="width: 140px; height: 140px;">
             </a>
           </div>
@@ -54,21 +54,21 @@
 
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li id="aboutTab"><a href="/meson/about">About</a></li>
+              <li id="aboutTab"><a href="/about">About</a></li>
 
               <li class="dropdown" id="menuTab">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/meson/menuPermanent">Everyday selection</a></li>
-                  <li><a href="/meson/menuDaily">Daily menu</a></li>
+                  <li><a href="/menuPermanent">Everyday selection</a></li>
+                  <li><a href="/menuDaily">Daily menu</a></li>
                 </ul>
               </li>
 
-              <li id="eventsTab"><a href="/meson/events">Events</a></li>
-              <li id="bookingTab"><a href="/meson/booking">Booking</a></li>
+              <li id="eventsTab"><a href="/events">Events</a></li>
+              <li id="bookingTab"><a href="/booking">Booking</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li id="contactTab"><a href="/meson/contact">Contact</a></li>
+              <li id="contactTab"><a href="/contact">Contact</a></li>
             </ul>
           </div>
         </div>

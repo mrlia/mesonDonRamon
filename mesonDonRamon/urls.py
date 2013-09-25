@@ -4,6 +4,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^meson/', include('meson.urls', namespace="meson")),
-    url(r'^admin/', include(admin.site.urls)),
+	url(r'^', include('meson.urls')),
+	url(r'^admin/', include(admin.site.urls)),
 )
