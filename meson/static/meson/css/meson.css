@@ -65,3 +65,13 @@ line-height: 1.8;
 	background-color: #FCE5CB;
 	padding: 15px;
 }
+.imageR {
+	width: 80%; 
+	border-radius: 10px;
+	text-align:right;
+}
+.imageL {
+	width: 100%; 
+	border-radius: 10px;
+	text-align:left;
+}

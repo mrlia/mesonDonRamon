@@ -1,10 +1,26 @@
 {% extends "meson/content_page.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block main_text_content %}
 	<div class="row">
 		<div class="col-md-12">
-			<p class="infoHeader">Index of Meson Don Ramon</p>
-		</div>
-	</div>
+			<p class="infoHeader">The best traditional style restaurant in Guadalajara</p>
+			<div class="row">
+				<div class="col-md-5">
+					<p class="infoTextFont imageL">
+						<img class="imageL" src="{% static 'meson/images/outside.jpg' %}"/>
+					</p>
+	        	</div>
+				<div class="col-md-7">
+					<p class="infoTextContainer infoTextFont">
+						Every week day a new speciality, <b>tipical spanish dishes</b>. Cocido, fabada, rabo de toro, patatas con costillas, judías con perdíz, lentejas con chorizo and more!<br/>
+						Special dishes on the weekends. Migas, paella...
+					</p>
+	        	</div>
+        	</div>
+			<p class="infoTextContainer infoTextFont imageR">
+				<img class="imageR" src="{% static 'meson/images/mesonFront.jpg' %}"/>
+			</p>
+        </div>
+    </div>
 {% endblock %}
